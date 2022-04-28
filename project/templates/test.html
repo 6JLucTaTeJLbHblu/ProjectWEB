@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="/chat">
+      {% if user %}
+      Нашёл пользователя {{user.email}}
+      <button class="button is-block is-info is-large is-fullwidth">Написать сообщение</button>
+      {% else %}
+      Пользователь не найден
+      {% endif %}
+      {{ q }}
+</form>
+    {% endblock %}

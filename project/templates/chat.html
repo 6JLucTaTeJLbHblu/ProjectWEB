@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='chat'>
+	<div>
+		<div id='messages'>
+			{% for m in messages %}
+			 {{ m.User.name }} {{ str(m.Messages.time)[11:16] }} {{ m.Messages.message }}<br>
+             {% endfor %}
+		</div>
+	</div>
+	<div>
+		<form method='post' id='chat-form' action="/send">
+			{{ current_user.name }} [{{ user.name }}]:
+			<input type='text' name='message' id='message-text' placeholder='Введите сообщение'>
+			<input type='submit' value='=>'>
+		</form>
+	</div>
+</div>
+{% endblock %}

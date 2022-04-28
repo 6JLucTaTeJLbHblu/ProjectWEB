@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="/search">
+  <div class="field">
+    <div class="control">
+      <input class="input is-large" name="search" placeholder="Поиск" autofocus="">
+    </div>
+  </div>
+  <button class="button is-block is-info is-large is-fullwidth">Найти</button>
+</form>
+{% endblock %}
